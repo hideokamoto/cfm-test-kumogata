@@ -14,28 +14,13 @@ Parameters do
 end
 
 Resources do
-  myEC2Instance do
-    Type "AWS::EC2::Instance"
-    Properties do
-      ImageId "ami-f0091d91"
-      InstanceType { Ref "InstanceType" }
-      KeyName "your_key_name"
-
-      UserData do
-        Fn__Base64 (<<-EOS).undent
-          #!/bin/bash
-          yum install -y httpd
-          service httpd start
-        EOS
-      end
-    end
-  end
+  _include 'includes/ec2.rb'
 end
 
 Outputs do
   AZ do
     Value do
-      Fn__GetAtt "myEC2Instance", "AvailabilityZone"
+      Fn__GetAtt "sampleEC2Instance", "AvailabilityZone"
     end
   end
 end
