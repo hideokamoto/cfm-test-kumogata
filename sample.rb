@@ -14,8 +14,10 @@ Parameters do
 end
 
 Resources do
+  _include 'includes/vpc.rb'
   _include 'includes/ec2.rb'
 end
+
 
 Outputs do
   AZ do
