@@ -4,7 +4,7 @@ sampleEC2Instance do
     ImageId "ami-f0091d91"
     InstanceInitiatedShutdownBehavior "stop"
     InstanceType { Ref "InstanceType" }
-    #KeyName "cfnsample"
+    KeyName { Ref "KeyName"}
     NetworkInterfaces [
       _{
         AssociatePublicIpAddress "true"

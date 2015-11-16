@@ -15,6 +15,7 @@ end
 
 Resources do
   _include 'includes/vpc.rb'
+  _include 'includes/keyname.rb'
   _include 'includes/ec2.rb'
 end
 
